@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-formapp"
+    version="1.0.0">
+
+    <name>cordova-plugin-formapp</name>
+    <description>cordova-plugin-formapp</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,hms</keywords>
+
+    <repo>.git</repo>
+    <issue>/issues</issue>
+
+    <js-module src="www/Form.js" name="Form">
+        <clobbers target="Form" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Form" >
+                <param name="android-package" value="com.cordova.example.Form"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/Form.java" target-dir="src/com/cordova/example" />
+    </platform>
+
+</plugin>
+
